@@ -12,6 +12,11 @@ RFAChrome = function(){
       //document.getElementById("chat-sound").playMentionSound();
     });
     */
+    //
+    // Vote for Pedro!
+    //
+
+    $('#room').append('<div id="voteforbrian"></div>');
 
     //
     // CHAT MSG HANDLING
