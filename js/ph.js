@@ -1,4 +1,4 @@
-phEnchancer = function(){
+RFAChrome = function(){
 
     $('#chat-messages').on( "click", function() {
       //document.getElementById("chat-sound").playMentionSound();
@@ -57,8 +57,6 @@ phEnchancer = function(){
       };
 
     };
-    
-    console.warn('Ben Likes Boys');
 
     //
     // SOUNDS
@@ -122,13 +120,16 @@ phEnchancer = function(){
   
 function init(){
   if ($('#audience').length>0){
-    if (document.location.pathname=="/" || $('.phEnchancer').length>0) return;//Only one instance of plug at a time.
+    if (document.location.pathname=="/" || $('.RFAChrome').length>0) return;//Only one instance of plug at a time.
 
-    var phEnchancer = new phEnchancer();
+    var RFAChrome = new RFAChrome();
 
   } else {
     setTimeout(init, 250);
   }
+
+  console.log('RFA Loaded!');
+
 };
 
 init();
