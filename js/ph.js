@@ -4,8 +4,8 @@ var readyStateCheckIntervalRFA = setInterval(function(){
     clearInterval(readyStateCheckIntervalRFA);
   }
 }, 10);
-  
-function init(){
+
+RFAChrome = function(){
 
     $('#chat-messages').on( "click", function() {
       //document.getElementById("chat-sound").playMentionSound();
@@ -122,6 +122,18 @@ function init(){
       var snd = new Audio("http://thebriankinney.com/ph/sfx/gunshot.mp3"); 
       snd.play();
     };
+
+};
+  
+function init(){
+  if ($('#audience').length>0){
+    if (document.location.pathname=="/" || $('.RFAChrome').length>0) return;//Only one instance of plug at a time.
+
+    RFAChrome();
+
+  } else {
+    setTimeout(init, 250);
+  }
 
   console.log('RFA Loaded!');
 
