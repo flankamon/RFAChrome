@@ -135,6 +135,6 @@ function init(){
     setTimeout(init, 250);
   }
 
-  console.log('RFA Loaded!');
+  console.log('RFA Loaded! 2');
 
 };
