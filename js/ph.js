@@ -17,6 +17,7 @@ RFAChrome = function(){
     //
 
     $('#room').append('<div id="voteforbrian"></div>');
+    $("#voteforbrian").animate({ left: "-500px" }, 10000 );
 
     //
     // CHAT MSG HANDLING
