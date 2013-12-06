@@ -1,3 +1,10 @@
+var readyStateCheckIntervalRFA = setInterval(function(){
+  if(document.readyState === "complete"){
+    init();
+    clearInterval(readyStateCheckIntervalRFA);
+  }
+}, 10);
+
 RFAChrome = function(){
 
     $('#chat-messages').on( "click", function() {
@@ -131,5 +138,3 @@ function init(){
   console.log('RFA Loaded!');
 
 };
-
-init();
