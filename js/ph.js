@@ -18,10 +18,9 @@ RFAChrome = function(){
 
     $('#room').append('<div id="voteforbrian"></div>');
 
-    function voteForPedro(){
+    (function voteForPedro(){
        $("#voteforbrian").delay(30000).animate({ left: "-500px" },30000, "linear", voteForPedro);
-    };
-    voteForPedro();
+    })();
 
     //
     // CHAT MSG HANDLING
