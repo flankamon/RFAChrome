@@ -123,6 +123,9 @@ RFAChrome = function(){
       snd.play();
     };
 
+
+  console.log('RFA Finished');
+
 };
   
 function init(){
@@ -134,7 +137,5 @@ function init(){
   } else {
     setTimeout(init, 250);
   }
-
-  console.log('RFA Loaded! 2');
 
 };
