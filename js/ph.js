@@ -19,7 +19,7 @@ RFAChrome = function(){
     $('#room').append('<div id="voteforbrian"></div>');
 
     function voteForPedro() {
-        $(".boxtext").delay(30000).animate({ left: "-500px" },30000, "linear", voteForPedro);
+        $(".voteforbrian").animate({ left: "-500px" },30000, "linear", voteForPedro);
     }
 
     voteForPedro();
