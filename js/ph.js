@@ -73,7 +73,7 @@ RFAChrome = function(){
       snd.play();
     };
 
-    function cymablSFX() {
+    function cymbalSFX() {
       var snd = new Audio("http://thebriankinney.com/ph/sfx/cymbal.mp3"); 
       snd.play();
     };
