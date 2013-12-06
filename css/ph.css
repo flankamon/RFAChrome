@@ -1,0 +1,4 @@
+body { background-image: url(images/island.jpg) !important; }
+.background img { display: none !important; }
+#now-playing-media .bar-value { color: orange !important; font-size: 12px !important;}
+#now-playing-media .bar-value .author { color: red !important; font-weight: bold !important; }
