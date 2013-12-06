@@ -28,7 +28,7 @@ RFAChrome = function(){
     // CHAT MSG HANDLING
     //
 
-    $('#now-playing-dj').append('<span class="pHVersion">pH: v0.103</strong>');
+    $('#now-playing-dj').append('<span class="pHVersion">pH: BETA v0.104</strong>');
 
     
     API.on(API.CHAT, chtMsg);
