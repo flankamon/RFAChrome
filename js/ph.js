@@ -15,21 +15,13 @@ RFAChrome = function(){
     // VARIABLES
     //
 
+    var uName = $('#user-meta .username span').html();
+
+    console.log('HEYO You\'re user name is ' + uName);
 
     //
     // CHAT MSG HANDLING
     //
-    
-    /*
-    API.on(API.CHAT_COMMAND, chtCmd);
-
-    function chtCmd(value) {
-      var c = value
-      if (c.indexOf("/horn") !=-1) {
-          reggaeHorn();
-      };
-    };
-    */
 
     $('#now-playing-dj').append('<span class="pHVersion">pH: v0.103</strong>');
 
