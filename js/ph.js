@@ -7,17 +7,11 @@ var readyStateCheckIntervalRFA = setInterval(function(){
 
 RFAChrome = function(){
 
+    /*
     $('#chat-messages').on( "click", function() {
       //document.getElementById("chat-sound").playMentionSound();
     });
-
-    //
-    // VARIABLES
-    //
-
-    var uName = $('#user-meta .username span').html();
-
-    console.log('HEYO You\'re user name is ' + uName);
+    */
 
     //
     // CHAT MSG HANDLING
