@@ -18,17 +18,13 @@ RFAChrome = function(){
 
     $('#room').append('<div id="voteforbrian"></div>');
 
-    function voteForPedro() {
-        $(".voteforbrian").animate({ left: "-500px" },30000, "linear", voteForPedro);
-    }
-
-    voteForPedro();
+    $("#voteforbrian").animate({ left: "-500px" },30000, "linear");
 
     //
     // CHAT MSG HANDLING
     //
 
-    $('#now-playing-dj').append('<span class="pHVersion">pH: BETA v0.104</strong>');
+    $('#now-playing-dj').append('<span class="pHVersion">pH: v0.105</strong>');
 
     
     API.on(API.CHAT, chtMsg);
