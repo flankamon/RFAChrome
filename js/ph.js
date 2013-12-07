@@ -119,28 +119,6 @@ RFAChrome = function(){
       snd.play();
     };
 
-    function canChuneSFX(userId) {
-      console.log("userId: " + userId + " BOUNCER ID: " + API.ROLE.BOUNCER);
-      var canChune = false;
-
-      switch (userId) {
-        case API.ROLE.RESIDENTDJ:
-        case API.ROLE.BOUNCER:
-        case API.ROLE.MANAGER:
-        case API.ROLE.COHOST:
-        case API.ROLE.HOST:
-        case API.ROLE.AMBASSADOR:
-        case API.ROLE.ADMIN:
-          canChune = true;
-          break;
-        default:
-          canChune = false;
-          break;
-      }
-
-      return canChune;
-    }
-
    console.log('RFA Finished');
 };
   
