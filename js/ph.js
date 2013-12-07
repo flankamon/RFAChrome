@@ -120,7 +120,7 @@ RFAChrome = function(){
     };
 
     function canChuneSFX(userId) {
-
+      console.log("userId: " + userId + " BOUNCER ID: " + API.ROLE.BOUNCER);
       var canChune = false;
 
       switch (userId) {
