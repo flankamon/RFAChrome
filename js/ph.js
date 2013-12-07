@@ -123,12 +123,12 @@ RFAChrome = function(){
   
 function init(){
   if ($('#audience').length>0){
-    if (document.location.pathname=="/" || $('.RFAChrome').length>0) return;//Only one instance of plug at a time.
+    if (document.location.pathname=="/" || $('.RFAChrome').length>0) return; // Only one instance of RFA at a time
 
     RFAChrome();
 
   } else {
-    setTimeout(init, 250);
+    setTimeout(init, 250); // yeah -- this is because of plug.dj ... don't you judge me!
   }
 
 };
