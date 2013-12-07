@@ -29,35 +29,35 @@ RFAChrome = function(){
     
     API.on(API.CHAT, chtMsg);
     function chtMsg(data) {
-
-      if (!canChuneSFX(data.FromID))
-        return;
-
-      var c = data.message;
+      console.log("userId: " + userId + " BOUNCER ID: " + API.ROLE.BOUNCER);
+      if (canChuneSFX(data.FromID))
+      {
+        var c = data.message;
       
-      if (c.indexOf(":fire:") !=-1) {
-          reggaeHornLongSFX();
-      } else if (c.indexOf("chune!") !=-1) {
-          chuneSFX();
-      } else if (c.indexOf(":car:") !=-1) {
-          carSFX();
-      } else if (c.indexOf(":police_car:") !=-1) {
-          police_carSFX();
-      } else if (c.indexOf(":clap:") !=-1) {
-          clapSFX();
-      } else if (c.indexOf(":gun:") !=-1) {
-          gunSFX();
-      } else if (c.indexOf(":zap:") !=-1) {
-          lazerSFX();
-      } else if (c.indexOf(":ship:") !=-1) {
-          shipSFX();
-      } else if (c.indexOf(":skull:") !=-1) {
-          lockandloadSFX();
-      } else if (c.indexOf(":loudspeaker:") !=-1) {
-          loudspeakerSFX();
-      } else if (c.indexOf(":thumbsup:") !=-1) {
-          cymbalSFX();
-      };
+        if (c.indexOf(":fire:") !=-1) {
+            reggaeHornLongSFX();
+        } else if (c.indexOf("chune!") !=-1) {
+            chuneSFX();
+        } else if (c.indexOf(":car:") !=-1) {
+            carSFX();
+        } else if (c.indexOf(":police_car:") !=-1) {
+            police_carSFX();
+        } else if (c.indexOf(":clap:") !=-1) {
+            clapSFX();
+        } else if (c.indexOf(":gun:") !=-1) {
+            gunSFX();
+        } else if (c.indexOf(":zap:") !=-1) {
+            lazerSFX();
+        } else if (c.indexOf(":ship:") !=-1) {
+            shipSFX();
+        } else if (c.indexOf(":skull:") !=-1) {
+            lockandloadSFX();
+        } else if (c.indexOf(":loudspeaker:") !=-1) {
+            loudspeakerSFX();
+        } else if (c.indexOf(":thumbsup:") !=-1) {
+            cymbalSFX();
+        }
+      }
 
     };
 
