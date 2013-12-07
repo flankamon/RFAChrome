@@ -30,6 +30,9 @@ RFAChrome = function(){
     API.on(API.CHAT, chtMsg);
     function chtMsg(data) {
 
+      if (!canChuneSFX(data.FromID))
+        return;
+
       var c = data.message;
       
       if (c.indexOf(":fire:") !=-1) {
@@ -116,9 +119,29 @@ RFAChrome = function(){
       snd.play();
     };
 
+    function canChuneSFX(userId) {
 
-  console.log('RFA Finished');
+      var canChune = false;
 
+      switch (userId) {
+        case API.ROLE.RESIDENTDJ:
+        case API.ROLE.BOUNCER:
+        case API.ROLE.MANAGER:
+        case API.ROLE.COHOST:
+        case API.ROLE.HOST:
+        case API.ROLE.AMBASSADOR:
+        case API.ROLE.ADMIN:
+          canChune = true;
+          break;
+        default:
+          canChune = false;
+          break;
+      }
+
+      return canChune;
+    }
+
+   console.log('RFA Finished');
 };
   
 function init(){
