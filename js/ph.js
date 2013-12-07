@@ -29,7 +29,7 @@ RFAChrome = function(){
     
     API.on(API.CHAT, chtMsg);
     function chtMsg(data) {
-      console.log("userId: " + userId + " BOUNCER ID: " + API.ROLE.BOUNCER);
+      console.log("userId: " + data.FromID + " BOUNCER ID: " + API.ROLE.BOUNCER);
       if (canChuneSFX(data.FromID))
       {
         var c = data.message;
