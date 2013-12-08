@@ -1,4 +1,7 @@
-var readyStateCheckIntervalRFA = setInterval(function(){
+
+var FortuneCookeSvc = {};
+
+var readyStateCheckIntervalRFA = setInterval(function () {
   if(document.readyState === "complete"){
     init();
     clearInterval(readyStateCheckIntervalRFA);
@@ -58,6 +61,10 @@ RFAChrome = function(){
           loudspeakerSFX();
       } else if (c.indexOf(":thumbsup:") != -1) {
         cymbalSFX();
+      }
+
+      if (c.indexOf(":fortune:") != -1) {
+        window.FortuneCookeSvc.requestFortune(data.from);
       }
     };
 
@@ -127,9 +134,29 @@ function init(){
     if (document.location.pathname=="/" || $('.RFAChrome').length>0) return; // Only one instance of RFA at a time
 
     RFAChrome();
+    window.FortuneCookeSvc.init();
 
   } else {
     setTimeout(init, 250); // yeah -- this is because of plug.dj ... don't you judge me!
   }
 
 };
+
+FortuneCookeSvc = {
+  _username: null,
+  init: function() {
+    
+    $('#room').append('<div id="divFortuneSvc" style="BEHAVIOR: url(webservice.htc);" onresult="showFortune()"></div>');
+
+    window.divFortuneSvc.useService(http://www.fullerdata.com/FortuneCookie/FortuneCookie.asmx, "GetFortuneCookie");
+  },
+  requestFortune: function (username) {
+    this._username = username;
+    window.divFortuneSvc.GetFortuneCookie.callService();
+  },
+  showFortune: function() {
+    API.sendChat(this._username + ": " + window.event.result.value);
+  }
+};
+
+
