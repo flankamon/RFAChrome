@@ -63,7 +63,7 @@ RFAChrome = function(){
         cymbalSFX();
       }
 
-      if (c.indexOf(":fortune:") != -1) {
+      if (c.indexOf(":8ball:") != -1) {
         window.FortuneCookeSvc.requestFortune(data.from);
       }
     };
@@ -144,18 +144,21 @@ function init(){
 
 FortuneCookeSvc = {
   _username: null,
+  _message: null,
   init: function() {
-    
-    $('#room').append('<div id="divFortuneSvc" style="BEHAVIOR: url(webservice.htc);" onresult="showFortune()"></div>');
+    this._message = "Di gal dem cockup dem batty fi yuh!";
+    //$('#room').append('<div id="divFortuneSvc" style="BEHAVIOR: url(webservice.htc);" onresult="showFortune()"></div>');
 
-    window.divFortuneSvc.useService(http://www.fullerdata.com/FortuneCookie/FortuneCookie.asmx, "GetFortuneCookie");
+    //window.divFortuneSvc.useService(http://www.fullerdata.com/FortuneCookie/FortuneCookie.asmx, "GetFortuneCookie");
   },
   requestFortune: function (username) {
     this._username = username;
-    window.divFortuneSvc.GetFortuneCookie.callService();
+    //window.divFortuneSvc.GetFortuneCookie.callService();
+    this.showFortune();
   },
   showFortune: function() {
-    API.sendChat(this._username + ": " + window.event.result.value);
+    //API.sendChat(this._username + ": " + window.event.result.value);
+    API.sendChat(this._username + ": " + this._message);
   }
 };
 
