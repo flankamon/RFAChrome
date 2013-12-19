@@ -25,13 +25,14 @@ RFAChrome = function () {
   //
   $('#room').append('<div id="voteforbrian"></div>');
   $("#voteforbrian").animate({ left: "-500px" }, 30000, "linear");
-  
-  $('#sfxtoggle').append('<div id="sfx-toggle" style="display:none" class="enabled"></div>');
+
 
   //
   // GUI
   // TODO: Menus
   $('#now-playing-dj').append('<span class="pHVersion"> RFA eX:  v0.1.6</strong>');
+  $('#room').append('<div id="rfaMenu"></div>');
+  $('#rfaMenu').append('<div id="sfx-toggle" style="display:none" class="enabled"></div>');
 
   //
   // CHAT MSG HANDLING
@@ -40,7 +41,9 @@ RFAChrome = function () {
 
   function chtMsg(data) {
     if (data.message.indexOf("togglesfx") != -1) {
-      $("#sfx-toggle").toggleClass("enabled");
+      if (API.hasPermission(data.fromID, API.ROLE.MANAGER)) {
+        $("#sfx-toggle").toggleClass("enabled");
+      }
     }
 
     tryPlaySFX(data);
